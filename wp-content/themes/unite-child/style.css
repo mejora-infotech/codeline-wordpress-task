@@ -8,3 +8,15 @@
 */
  
 @import url("../unite/style.css");
+
+.recent-films{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.recent-films > li {
+	border-bottom: 1px solid #EEE;
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
