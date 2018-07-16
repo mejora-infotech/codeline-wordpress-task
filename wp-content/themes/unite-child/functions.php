@@ -58,4 +58,129 @@ if ( ! function_exists('films_post_type') ) {
 	}
 	add_action( 'init', 'films_post_type', 0 );
 }
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++  								Added gener taxonomy     								+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+function create_genre_taxonomies() {
+	$labels = array(
+		'name'              => _x( 'Gener', 'taxonomy general name', 'codeline-wordpress-task' ),
+		'singular_name'     => _x( 'Gener', 'taxonomy singular name', 'codeline-wordpress-task' ),
+		'search_items'      => __( 'Search Gener', 'codeline-wordpress-task' ),
+		'all_items'         => __( 'All Gener', 'codeline-wordpress-task' ),
+		'parent_item'       => __( 'Parent Gener', 'codeline-wordpress-task' ),
+		'parent_item_colon' => __( 'Parent Gener:', 'codeline-wordpress-task' ),
+		'edit_item'         => __( 'Edit Gener', 'codeline-wordpress-task' ),
+		'update_item'       => __( 'Update Gener', 'codeline-wordpress-task' ),
+		'add_new_item'      => __( 'Add New Gener', 'codeline-wordpress-task' ),
+		'new_item_name'     => __( 'New Gener Name', 'codeline-wordpress-task' ),
+		'menu_name'         => __( 'Gener', 'codeline-wordpress-task' ),
+	);
+
+	$args = array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'rewrite'           => array( 'slug' => 'genre', 'with_front' => FALSE ),
+	);
+
+	register_taxonomy( 'genre', array( 'films' ), $args );
+}
+add_action( 'init', 'create_genre_taxonomies', 0 );
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++  								Added country taxonomy     								+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+function create_country_taxonomies() {
+	$labels = array(
+		'name'              => _x( 'Country', 'taxonomy general name', 'codeline-wordpress-task' ),
+		'singular_name'     => _x( 'Country', 'taxonomy singular name', 'codeline-wordpress-task' ),
+		'search_items'      => __( 'Search Country', 'codeline-wordpress-task' ),
+		'all_items'         => __( 'All Country', 'codeline-wordpress-task' ),
+		'parent_item'       => __( 'Parent Country', 'codeline-wordpress-task' ),
+		'parent_item_colon' => __( 'Parent Country:', 'codeline-wordpress-task' ),
+		'edit_item'         => __( 'Edit Country', 'codeline-wordpress-task' ),
+		'update_item'       => __( 'Update Country', 'codeline-wordpress-task' ),
+		'add_new_item'      => __( 'Add New Country', 'codeline-wordpress-task' ),
+		'new_item_name'     => __( 'New Country Name', 'codeline-wordpress-task' ),
+		'menu_name'         => __( 'Country', 'codeline-wordpress-task' ),
+	);
+
+	$args = array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'rewrite'           => array( 'slug' => 'country', 'with_front' => FALSE ),
+	);
+
+	register_taxonomy( 'country', array( 'films' ), $args );
+}
+add_action( 'init', 'create_country_taxonomies', 0 );
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++  								Added year taxonomy     								+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+function create_year_taxonomies() {
+	$labels = array(
+		'name'              => _x( 'Year', 'taxonomy general name', 'codeline-wordpress-task' ),
+		'singular_name'     => _x( 'Year', 'taxonomy singular name', 'codeline-wordpress-task' ),
+		'search_items'      => __( 'Search Year', 'codeline-wordpress-task' ),
+		'all_items'         => __( 'All Year', 'codeline-wordpress-task' ),
+		'parent_item'       => __( 'Parent Year', 'codeline-wordpress-task' ),
+		'parent_item_colon' => __( 'Parent Year:', 'codeline-wordpress-task' ),
+		'edit_item'         => __( 'Edit Year', 'codeline-wordpress-task' ),
+		'update_item'       => __( 'Update Year', 'codeline-wordpress-task' ),
+		'add_new_item'      => __( 'Add New Year', 'codeline-wordpress-task' ),
+		'new_item_name'     => __( 'New Year Name', 'codeline-wordpress-task' ),
+		'menu_name'         => __( 'Year', 'codeline-wordpress-task' ),
+	);
+
+	$args = array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'rewrite'           => array( 'slug' => 'year', 'with_front' => FALSE ),
+	);
+
+	register_taxonomy( 'year', array( 'films' ), $args );
+}
+add_action( 'init', 'create_year_taxonomies', 0 );
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++  								Added actors taxonomy     								+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+function create_actor_taxonomies() {
+	$labels = array(
+		'name'              => _x( 'Actors', 'taxonomy general name', 'codeline-wordpress-task' ),
+		'singular_name'     => _x( 'Actor', 'taxonomy singular name', 'codeline-wordpress-task' ),
+		'search_items'      => __( 'Search Actor', 'codeline-wordpress-task' ),
+		'all_items'         => __( 'All Actors', 'codeline-wordpress-task' ),
+		'parent_item'       => __( 'Parent Actor', 'codeline-wordpress-task' ),
+		'parent_item_colon' => __( 'Parent Actor:', 'codeline-wordpress-task' ),
+		'edit_item'         => __( 'Edit Actor', 'codeline-wordpress-task' ),
+		'update_item'       => __( 'Update Actor', 'codeline-wordpress-task' ),
+		'add_new_item'      => __( 'Add New Actor', 'codeline-wordpress-task' ),
+		'new_item_name'     => __( 'New Actor Name', 'codeline-wordpress-task' ),
+		'menu_name'         => __( 'Actors', 'codeline-wordpress-task' ),
+	);
+
+	$args = array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'rewrite'           => array( 'slug' => 'actor', 'with_front' => FALSE ),
+	);
+
+	register_taxonomy( 'actor', array( 'films' ), $args );
+}
+add_action( 'init', 'create_actor_taxonomies', 0 );
+
 ?>
