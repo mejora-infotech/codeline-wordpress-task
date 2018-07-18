@@ -213,4 +213,5 @@ function register_shortcodes() {
 	add_shortcode( 'films', 'display_films' );
 }
 add_action( 'init', 'register_shortcodes' );
+
 ?>
