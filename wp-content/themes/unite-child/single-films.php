@@ -18,12 +18,7 @@ get_header();
 							the_post_thumbnail( 'unite-featured', array( 'class' => 'thumbnail' )); 
 						endif;
 					?>
-
 					<h1 class="entry-title "><?php the_title(); ?></h1>
-
-					<div class="entry-meta">
-						<?php unite_posted_on(); ?>
-					</div><!-- .entry-meta -->
 				</header><!-- .entry-header -->
 
 				<div class="entry-content">
@@ -47,6 +42,26 @@ get_header();
 							$out = array();
 							foreach ($terms as $term) {
 								$out[] = '<a class="' .$term->slug .'" href="' .get_term_link( $term->slug, 'genre') .'">' .$term->name .'</a>';
+							}
+							echo join( ', ', $out ) ."</li>";
+						} 
+					?>
+					<?php $terms = wp_get_post_terms($post->ID, 'year');
+						if ($terms) {
+							echo '<li class="list-group-item"> <strong>Year: </strong>';
+							$out = array();
+							foreach ($terms as $term) {
+								$out[] = '<a class="' .$term->slug .'" href="' .get_term_link( $term->slug, 'year') .'">' .$term->name .'</a>';
+							}
+							echo join( ', ', $out ) ."</li>";
+						} 
+					?>
+					<?php $terms = wp_get_post_terms($post->ID, 'actor');
+						if ($terms) {
+							echo '<li class="list-group-item"> <strong>Actors: </strong>';
+							$out = array();
+							foreach ($terms as $term) {
+								$out[] = '<a class="' .$term->slug .'" href="' .get_term_link( $term->slug, 'actor') .'">' .$term->name .'</a>';
 							}
 							echo join( ', ', $out ) ."</li>";
 						} 

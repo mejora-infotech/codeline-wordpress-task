@@ -27,10 +27,6 @@ get_header(); ?>
 					?>
 
 					<h2 class="entry-title "><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-
-					<div class="entry-meta">
-						<?php unite_posted_on(); ?>
-					</div><!-- .entry-meta -->
 				</header><!-- .entry-header -->
 
 				<div class="entry-content">
